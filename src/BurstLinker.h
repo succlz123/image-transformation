@@ -33,16 +33,11 @@ namespace blk {
 
         void reverseColor(unsigned char *data, int width, int height, int channels);
 
+        void sepiaToneFilter(unsigned char *data, int width, int height, int channels);
 
-        bool connect(std::vector<uint32_t> &image, uint32_t delay,
-                     QuantizerType quantizerType, DitherType ditherType, int32_t transparencyOption,
-                     uint16_t left, uint16_t top);
+        void whiteImageFilter(unsigned char *data, int width, int height, int channels);
 
-        bool connect(std::vector<std::vector<uint32_t >> &images, uint32_t delay,
-                     QuantizerType quantizerType, DitherType ditherType, int32_t transparencyOption,
-                     uint16_t left, uint16_t top);
-
-        void release();
+        void spotlightFilter(unsigned char *data, int width, int height, int channels);
 
     private:
 

@@ -17,7 +17,7 @@
 #include "BayerDitherer.h"
 #include "LzwEncoder.h"
 #include "FloydSteinbergDitherer.h"
-#include "UniformQuantizer.h"
+#include "SepiaToneFilter.h"
 #include "NeuQuantQuantizer.h"
 #include "M2Ditherer.h"
 #include "NoDitherer.h"
@@ -94,8 +94,6 @@ std::vector<uint8_t> GifEncoder::addImage(const std::vector<uint32_t> &original,
     std::string quantizerStr;
     switch (qType) {
         case QuantizerType::Uniform:
-            colorQuantizer = std::make_unique<UniformQuantizer>();
-            quantizerStr = "UniformQuantizer";
             break;
         case QuantizerType::MedianCut:
             colorQuantizer = std::make_unique<MedianCutQuantizer>();

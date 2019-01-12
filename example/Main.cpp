@@ -65,7 +65,6 @@ void addImage(const char *fileName, uint32_t width, uint32_t height, uint32_t de
     std::vector<std::vector<uint32_t >> images;
     images.emplace_back(image);
     images.emplace_back(image);
-    burstLinker.connect(images, delay, quantizerType, ditherType, transparencyOption, 0, 0);
 }
 
 void
@@ -85,11 +84,10 @@ addImage(int r, int g, int b, uint32_t width, uint32_t height, uint32_t delay, B
     int ignoreTranslucency = 1;
     int enableTransparency = 0;
     int transparencyOption = ignoreTranslucency << 8 | enableTransparency;
-    burstLinker.connect(imagePixel, delay, quantizerType, ditherType, transparencyOption, 0, 0);
 }
 
 int main(int argc, char *argv[]) {
-    const char *fileName = "../screenshot/lenna-original.png";
+    const char *fileName = "../screenshot/timg.jpeg";
     int width, height, n;
     unsigned char *data = stbi_load(fileName, &width, &height, &n, 0);
     if (!data) {
@@ -108,13 +106,13 @@ int main(int argc, char *argv[]) {
     BurstLinker burstLinker;
     auto out = new unsigned char[width * height];
     burstLinker.grayScaleMaxMinAverage(data, out, width, height, n);
-    stbi_write_png("write.png", width, height, 1, out, width);
+//    stbi_write_png("write.png", width, height, 1, out, width);
 
     long long diff = currentTimeMs() - currentTime;
     std::cout << "Uniform " << diff << "ms" << std::endl;
 
     currentTime = currentTimeMs();
-    burstLinker.reverseColor(data, width, height, n);
+    burstLinker.spotlightFilter(data, width, height, n);
     stbi_write_png("reverseColor.png", width, height, n, data, width * n);
     diff = currentTimeMs() - currentTime;
     std::cout << "reverseColor " << diff << "ms" << std::endl;

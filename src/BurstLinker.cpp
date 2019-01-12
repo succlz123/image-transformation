@@ -4,7 +4,9 @@
 
 #include <cmath>
 #include "BurstLinker.h"
-#include "GifAnalyzer.h"
+#include "SepiaToneFilter.h"
+#include "WhiteImageFilter.h"
+#include "SpotlightFilter.h"
 
 using namespace blk;
 
@@ -254,45 +256,17 @@ void BurstLinker::reverseColor(unsigned char *data, int width, int height, int c
     }
 }
 
-bool BurstLinker::connect(std::vector<uint32_t> &image, uint32_t delay,
-                          QuantizerType quantizerType, DitherType ditherType, int32_t transparencyOption,
-                          uint16_t left, uint16_t top) {
-    if (gifEncoder == nullptr) {
-        return false;
-    }
-    std::vector<uint8_t> content;
-    gifEncoder->addImage(image, delay, quantizerType, ditherType, transparencyOption, left, top, content);
-    gifEncoder->flush(content);
-    return true;
+void BurstLinker::sepiaToneFilter(unsigned char *data, int width, int height, int channels) {
+    SepiaToneFilter filter;
+    filter.filter(data, width, height, channels);
 }
 
-bool BurstLinker::connect(std::vector<std::vector<uint32_t>> &images, uint32_t delay,
-                          QuantizerType quantizerType, DitherType ditherType, int32_t transparencyOption,
-                          uint16_t left, uint16_t top) {
-    if (gifEncoder == nullptr) {
-        return false;
-    }
-    size_t size = images.size();
-    std::vector<std::future<std::vector<uint8_t>>> tasks;
-    for (int k = 0; k < size; ++k) {
-        auto result = gifEncoder->threadPool->enqueue([=, &images]() {
-            std::vector<uint8_t> content;
-            auto image = images[k];
-            gifEncoder->addImage(image, delay, quantizerType, ditherType, transparencyOption, left, top, content);
-            return content;
-        });
-        tasks.emplace_back(std::move(result));
-    }
-    for (auto &task : tasks) {
-        std::vector<uint8_t> result = task.get();
-        gifEncoder->flush(result);
-    }
-    return true;
+void BurstLinker::whiteImageFilter(unsigned char *data, int width, int height, int channels) {
+    WhiteImageFilter filter;
+    filter.filter(data, width, height, channels);
 }
 
-void BurstLinker::release() {
-    if (gifEncoder != nullptr) {
-        gifEncoder->finishEncoding();
-    }
+void BurstLinker::spotlightFilter(unsigned char *data, int width, int height, int channels) {
+    SpotlightFilter filter;
+    filter.filter(data, width, height, channels);
 }
-

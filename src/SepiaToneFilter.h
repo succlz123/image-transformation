@@ -9,11 +9,11 @@
 
 namespace blk {
 
-    class UniformQuantizer : public ColorQuantizer {
+    class SepiaToneFilter {
 
     public:
 
-        int32_t quantize(const std::vector<ARGB> &in, uint32_t maxColorCount, std::vector<ARGB> &out) override;
+        void filter(unsigned char *data, int width, int height, int channels);
     };
 
 }

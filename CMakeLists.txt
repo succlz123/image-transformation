@@ -26,7 +26,9 @@ set(SOURCE_FILES
         ${src_dir}/FloydSteinbergDitherer.cpp ${src_dir}/FloydSteinbergDitherer.h
 
         ${src_dir}/ColorQuantizer.h
-        ${src_dir}/UniformQuantizer.cpp ${src_dir}/UniformQuantizer.h
+        ${src_dir}/SepiaToneFilter.cpp ${src_dir}/SepiaToneFilter.h
+        ${src_dir}/WhiteImageFilter.cpp ${src_dir}/WhiteImageFilter.h
+        ${src_dir}/SpotlightFilter.cpp ${src_dir}/SpotlightFilter.h
         ${src_dir}/RandomQuantizer.cpp ${src_dir}/RandomQuantizer.h
         ${src_dir}/MedianCutQuantizer.cpp ${src_dir}/MedianCutQuantizer.h
         ${src_dir}/KMeansQuantizer.cpp ${src_dir}/KMeansQuantizer.h
@@ -41,7 +43,7 @@ set(SOURCE_FILES
 
 set(BURSTLINKER_FILES
         ${src_dir}/Main.cpp
-        )
+        src/SpotlightFilter.cpp src/SpotlightFilter.h)
 
 set(EXAMPLE_FILES
         ${example_dir}/Main.cpp
