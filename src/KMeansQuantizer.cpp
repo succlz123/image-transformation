@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <random>
 #include <map>
+#include <cstring>
 #include "KMeansQuantizer.h"
 #include "KDTree.h"
 #include "Logger.h"

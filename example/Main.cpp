@@ -103,20 +103,22 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    BurstLinker burstLinker;
-//    burstLinker.flip(data);
-
-    uint32_t delay = 1000;
     long long currentTime = currentTimeMs();
-    bool colorTest = false;
 
-    stbi_write_png("write.png", width, height, n, data, width * 3);
+    BurstLinker burstLinker;
+    auto out = new unsigned char[width * height];
+    burstLinker.grayScaleMaxMinAverage(data, out, width, height, n);
+    stbi_write_png("write.png", width, height, 1, out, width);
 
     long long diff = currentTimeMs() - currentTime;
-    currentTime = currentTimeMs();
     std::cout << "Uniform " << diff << "ms" << std::endl;
 
+    currentTime = currentTimeMs();
+    burstLinker.reverseColor(data, width, height, n);
+    stbi_write_png("reverseColor.png", width, height, n, data, width * n);
+    diff = currentTimeMs() - currentTime;
+    std::cout << "reverseColor " << diff << "ms" << std::endl;
+
     stbi_image_free(data);
-//    burstLinker.analyzerGifInfo("out.gif");
     return 0;
 }

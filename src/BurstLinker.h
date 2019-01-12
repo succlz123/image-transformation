@@ -14,7 +14,25 @@ namespace blk {
 
     public:
 
-        void flip(const unsigned char *data);
+        void grayScaleWeighted(const unsigned char *data, unsigned char *out, int width, int height, int channels);
+
+        void
+        grayScaleAdobePhotoshop(const unsigned char *data, unsigned char *out, int width, int height, int channels);
+
+        void grayScaleComponentR(const unsigned char *data, unsigned char *out, int width, int height, int channels);
+
+        void grayScaleComponentG(const unsigned char *data, unsigned char *out, int width, int height, int channels);
+
+        void grayScaleComponentB(const unsigned char *data, unsigned char *out, int width, int height, int channels);
+
+        void grayScaleMax(const unsigned char *data, unsigned char *out, int width, int height, int channels);
+
+        void grayScaleAverage(const unsigned char *data, unsigned char *out, int width, int height, int channels);
+
+        void grayScaleMaxMinAverage(const unsigned char *data, unsigned char *out, int width, int height, int channels);
+
+        void reverseColor(unsigned char *data, int width, int height, int channels);
+
 
         bool connect(std::vector<uint32_t> &image, uint32_t delay,
                      QuantizerType quantizerType, DitherType ditherType, int32_t transparencyOption,
@@ -25,8 +43,6 @@ namespace blk {
                      uint16_t left, uint16_t top);
 
         void release();
-
-        void analyzerGifInfo(const char *path);
 
     private:
 
