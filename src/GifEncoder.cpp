@@ -18,11 +18,10 @@
 #include "LzwEncoder.h"
 #include "FloydSteinbergDitherer.h"
 #include "SepiaToneFilter.h"
-#include "NeuQuantQuantizer.h"
 #include "M2Ditherer.h"
 #include "NoDitherer.h"
 
-using namespace blk;
+using namespace it;
 
 #if defined(__RenderScript__)
 
@@ -110,10 +109,6 @@ std::vector<uint8_t> GifEncoder::addImage(const std::vector<uint32_t> &original,
         case QuantizerType::Octree:
             colorQuantizer = std::make_unique<OctreeQuantizer>();
             quantizerStr = "OctreeQuantizer";
-            break;
-        case QuantizerType::NeuQuant:
-            colorQuantizer = std::make_unique<NeuQuantQuantizer>();
-            quantizerStr = "NeuQuantQuantizer";
             break;
     }
 

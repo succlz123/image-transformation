@@ -11,7 +11,7 @@
 #include <functional>
 #include <stdexcept>
 
-namespace blk {
+namespace it {
 
     class ThreadPool {
 

@@ -6,7 +6,7 @@
 #include "FloydSteinbergDitherer.h"
 #include "KDTree.h"
 
-using namespace blk;
+using namespace it;
 
 static const int8_t ERROR_COMPONENT_SIZE = 4;
 static const float ERROR_COMPONENT_DELTA_X[] = {1.0f, -1.0f, 0.0f, 1.0f};

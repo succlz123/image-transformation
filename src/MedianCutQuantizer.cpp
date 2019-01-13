@@ -7,7 +7,7 @@
 #include <iostream>
 #include "MedianCutQuantizer.h"
 
-using namespace blk;
+using namespace it;
 
 struct Cluster {
     int start = 0;

@@ -7,8 +7,8 @@
 #include "../../../../../src/BayerDitherer.h"
 #include "../../../build/generated/source/rs/debug/ScriptC_linear.h"
 
-void NoDithererWithRs::dither(blk::RGB *originPixels, uint16_t width, uint16_t height,
-                              blk::RGB quantizerPixels[], int32_t quantizerSize,
+void NoDithererWithRs::dither(it::RGB *originPixels, uint16_t width, uint16_t height,
+                              it::RGB quantizerPixels[], int32_t quantizerSize,
                               uint8_t *colorIndices, sp<RS> rs) {
     int32_t size = width * height;
     sp<const Element> element = Element::U32(rs);

@@ -11,7 +11,7 @@
 #include "../third_part/stb_image.h"
 #include "../third_part/stb_image_write.h"
 
-using namespace blk;
+using namespace it;
 
 long long currentTimeMs() {
     std::chrono::time_point<std::chrono::system_clock, std::chrono::milliseconds> tp = std::chrono::time_point_cast<std::chrono::milliseconds>(
@@ -65,25 +65,6 @@ void addImage(const char *fileName, uint32_t width, uint32_t height, uint32_t de
     std::vector<std::vector<uint32_t >> images;
     images.emplace_back(image);
     images.emplace_back(image);
-}
-
-void
-addImage(int r, int g, int b, uint32_t width, uint32_t height, uint32_t delay, BurstLinker &burstLinker,
-         QuantizerType quantizerType, DitherType ditherType) {
-    uint32_t imageSize = width * height;
-    if (imageSize < width || imageSize < height) {
-        return;
-    }
-    std::vector<uint32_t> imagePixel;
-    imagePixel.reserve(imageSize);
-    for (uint32_t i = 0; i < width; i++) {
-        for (uint32_t j = 0; j < height; j++) {
-            imagePixel.push_back(b << 16 | g << 8 | r);
-        }
-    }
-    int ignoreTranslucency = 1;
-    int enableTransparency = 0;
-    int transparencyOption = ignoreTranslucency << 8 | enableTransparency;
 }
 
 int main(int argc, char *argv[]) {

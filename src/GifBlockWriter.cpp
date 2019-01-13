@@ -5,7 +5,7 @@
 #include <algorithm>
 #include "GifBlockWriter.h"
 
-using namespace blk;
+using namespace it;
 
 void GifBlockWriter::writeHeaderBlock(std::ofstream &file) {
     file.write("GIF89a", 6);

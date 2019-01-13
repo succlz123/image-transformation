@@ -8,7 +8,7 @@
 #include "WhiteImageFilter.h"
 #include "SpotlightFilter.h"
 
-using namespace blk;
+using namespace it;
 
 //Gray = (R*1 + G*2 + B*1) >> 2
 //Gray = (R*2 + G*5 + B*1) >> 3

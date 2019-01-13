@@ -6,7 +6,7 @@
 #include "M2Ditherer.h"
 #include "KDTree.h"
 
-using namespace blk;
+using namespace it;
 
 static const uint8_t matrix4x4[4][4] = {
         {0,  8,  2,  10},

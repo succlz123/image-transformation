@@ -7,7 +7,7 @@
 
 #include "Ditherer.h"
 
-namespace blk {
+namespace it {
 
     class M2Ditherer : public Ditherer {
 

@@ -8,7 +8,7 @@
 #include <cstdint>
 #include "ColorQuantizer.h"
 
-namespace blk {
+namespace it {
 
     class Ditherer {
 

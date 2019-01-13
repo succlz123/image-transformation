@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.7)
-project(BurstLinker)
+project(image-transformation)
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
@@ -33,23 +33,16 @@ set(SOURCE_FILES
         ${src_dir}/MedianCutQuantizer.cpp ${src_dir}/MedianCutQuantizer.h
         ${src_dir}/KMeansQuantizer.cpp ${src_dir}/KMeansQuantizer.h
         ${src_dir}/OctreeQuantizer.cpp ${src_dir}/OctreeQuantizer.h
-        ${src_dir}/NeuQuant.cpp ${src_dir}/NeuQuant.h
-        ${src_dir}/NeuQuantQuantizer.cpp ${src_dir}/NeuQuantQuantizer.h
         ${src_dir}/BurstLinker.cpp ${src_dir}/BurstLinker.h
 
         ${third_part_dir}/stb_image.h
         ${third_part_dir}/stb_image_write.h
         )
 
-set(BURSTLINKER_FILES
-        ${src_dir}/Main.cpp
-        src/SpotlightFilter.cpp src/SpotlightFilter.h)
-
 set(EXAMPLE_FILES
         ${example_dir}/Main.cpp
         )
 
-add_executable(BurstLinker ${SOURCE_FILES} ${BURSTLINKER_FILES})
 add_executable(Example ${SOURCE_FILES} ${EXAMPLE_FILES})
 
 message(STATUS "CMAKE_SYSTEM_INFO_FILE:   ${CMAKE_SYSTEM_INFO_FILE}")

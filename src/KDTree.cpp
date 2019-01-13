@@ -5,7 +5,7 @@
 #include <algorithm>
 #include "KDTree.h"
 
-using namespace blk;
+using namespace it;
 
 // euclideanDistance
 // int distance = nr * nr + ng * ng + nb * nb;

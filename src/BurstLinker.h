@@ -8,7 +8,7 @@
 #include <cstdint>
 #include "GifEncoder.h"
 
-namespace blk {
+namespace it {
 
     class BurstLinker {
 

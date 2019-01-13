@@ -8,7 +8,7 @@
 #include <random>
 #include "WhiteImageFilter.h"
 
-using namespace blk;
+using namespace it;
 
 int imageMath(int gray, double beta) {
     double scale = 255 / (std::log(255 * (beta - 1) + 1) / std::log(beta));

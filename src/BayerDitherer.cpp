@@ -6,7 +6,7 @@
 #include "BayerDitherer.h"
 #include "KDTree.h"
 
-using namespace blk;
+using namespace it;
 
 void BayerDitherer::dither(std::vector<ARGB> &origin, std::vector<ARGB> &quantize, uint8_t *colorIndices) {
     int bayer[64];

@@ -8,7 +8,7 @@
 #include <random>
 #include "SepiaToneFilter.h"
 
-using namespace blk;
+using namespace it;
 
 double randZeroToOne() {
     return rand() / (RAND_MAX + 1.);

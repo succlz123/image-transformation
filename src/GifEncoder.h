@@ -11,7 +11,7 @@
 #define BURSTLINKER_GIFENCODER_H
 
 
-namespace blk {
+namespace it {
 
     struct ARGB {
         uint8_t a = 0;

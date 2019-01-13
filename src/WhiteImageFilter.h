@@ -5,7 +5,7 @@
 #ifndef BURSTLINKER_WhiteImageFilter_H
 #define BURSTLINKER_WhiteImageFilter_H
 
-namespace blk {
+namespace it {
 
     class WhiteImageFilter {
 

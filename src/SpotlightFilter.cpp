@@ -5,7 +5,7 @@
 #include <cmath>
 #include "SpotlightFilter.h"
 
-using namespace blk;
+using namespace it;
 
 double getDistance(int centerX, int centerY, int px, int py) {
     double xx = (centerX - px) * (centerX - px);

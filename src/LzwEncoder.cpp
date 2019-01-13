@@ -5,7 +5,7 @@
 #include <iostream>
 #include "LzwEncoder.h"
 
-using namespace blk;
+using namespace it;
 
 static const int32_t MAX_STACK_SIZE = 4096;
 static const int32_t BYTE_NUM = 256;

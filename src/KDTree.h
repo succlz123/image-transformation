@@ -7,7 +7,7 @@
 
 #include "GifEncoder.h"
 
-namespace blk {
+namespace it {
 
     class KDTree {
 

@@ -5,7 +5,7 @@
 #include <random>
 #include "RandomQuantizer.h"
 
-using namespace blk;
+using namespace it;
 
 int32_t RandomQuantizer::quantize(const std::vector<ARGB> &in, uint32_t maxColorCount, std::vector<ARGB> &out) {
     size_t pixelCount = in.size();

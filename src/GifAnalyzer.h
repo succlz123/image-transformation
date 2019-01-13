@@ -5,7 +5,7 @@
 #ifndef BURSTLINKER_GIFANALYZER_H
 #define BURSTLINKER_GIFANALYZER_H
 
-namespace blk {
+namespace it {
 
     class GifAnalyzer {
 

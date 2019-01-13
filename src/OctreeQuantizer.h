@@ -7,7 +7,7 @@
 
 #include "ColorQuantizer.h"
 
-namespace blk {
+namespace it {
 
     class OctreeQuantizer : public ColorQuantizer {
 

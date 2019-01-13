@@ -10,7 +10,7 @@
 #include <list>
 #include <vector>
 
-namespace blk {
+namespace it {
 
     class LzwEncoder {
 

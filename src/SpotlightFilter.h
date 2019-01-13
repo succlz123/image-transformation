@@ -6,7 +6,7 @@
 #define BURSTLINKER_SPOTLIGHTFILTER_H
 
 
-namespace blk {
+namespace it {
 
     class SpotlightFilter {
 

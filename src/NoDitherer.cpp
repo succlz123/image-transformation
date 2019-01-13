@@ -7,7 +7,7 @@
 #include "NoDitherer.h"
 #include "KDTree.h"
 
-using namespace blk;
+using namespace it;
 
 void NoDitherer::dither(std::vector<ARGB> &origin, std::vector<ARGB> &quantize, uint8_t *colorIndices) {
     size_t totalSize = width * height;

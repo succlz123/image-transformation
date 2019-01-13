@@ -10,7 +10,7 @@
 #include <vector>
 #include "GifEncoder.h"
 
-namespace blk {
+namespace it {
 
     class GifBlockWriter {
 
